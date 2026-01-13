@@ -29,9 +29,20 @@ if %ERRORLEVEL% neq 0 (
 cd ..
 
 echo.
-echo [3/7] Registering Demo Flight...
+echo [2.5/7] Activating Python Virtual Environment...
 echo ========================================
 cd backend
+call venv\Scripts\activate
+if %ERRORLEVEL% neq 0 (
+    echo ERROR: Virtual environment not found!
+    echo Please run setup.bat first
+    pause
+    exit /b 1
+)
+
+echo.
+echo [3/7] Registering Demo Flight...
+echo ========================================
 call python register_demo_flight.py
 if %ERRORLEVEL% neq 0 (
     echo ERROR: Flight registration failed!
