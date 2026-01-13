@@ -43,7 +43,7 @@ def seed_data():
     for code, status_type in statuses:
         StatusLookup.objects.get_or_create(
             code=code,
-            statusType=status_type
+            defaults={'statusType': status_type}
         )
     
     print(f"✓ Created {len(statuses)} status types")
