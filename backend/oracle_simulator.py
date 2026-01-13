@@ -68,35 +68,21 @@ def settle_policy_on_chain(policy, delay_minutes):
             logger.info(f"   Transaction: {tx_hash.hex()}")
             logger.info(f"   Gas used: {receipt['gasUsed']}")
             
-            # Update database
-            claimed_status = StatusLookup.objects.filter(
-                code='Claimed', 
-                statusType='policy'
-            ).first()
-            
+            # Update policy status in database (code field is unique, don't filter by statusType)
+            claimed_status = StatusLookup.objects.filter(code='Claimed').first()
             if not claimed_status:
-                claimed_status = StatusLookup.objects.create(
-                    code='Claimed',
-                    statusType='policy'
-                )
+                claimed_status = StatusLookup.objects.create(code='Claimed', statusType='policy')
             
             policy.status = claimed_status
             policy.save()
             
-            # Create payout payment record so user can see it in transactions
+            # Create payment record for the payout
             from core.models import Payment
             from datetime import datetime
             
-            completed_status = StatusLookup.objects.filter(
-                code='Completed',
-                statusType='payment'
-            ).first()
-            
+            completed_status = StatusLookup.objects.filter(code='Completed').first()
             if not completed_status:
-                completed_status = StatusLookup.objects.create(
-                    code='Completed',
-                    statusType='payment'
-                )
+                completed_status = StatusLookup.objects.create(code='Completed', statusType='payment')
             
             Payment.objects.create(
                 booking=policy.booking,
