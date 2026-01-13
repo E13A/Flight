@@ -55,10 +55,10 @@ def create_booking(request: CreateBookingRequest):
         completed = StatusLookup.objects.filter(code__iexact='Completed').first()
         if not completed:
              completed = StatusLookup.objects.create(code='Completed', statusType='payment')
-<<<<<<< HEAD
 
-=======
->>>>>>> 49648211ea4fba32fc4b1bc350ea06a24c16e82d
+
+
+
         active_policy = StatusLookup.objects.filter(code__iexact='Active').first()
         if not active_policy:
              active_policy = StatusLookup.objects.create(code='Active', statusType='policy')
