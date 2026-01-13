@@ -37,7 +37,7 @@ REM Install Frontend Dependencies
 echo.
 echo [3/7] Installing Frontend Dependencies...
 cd frontend
-call npm install
+call npm install --legacy-peer-deps
 if %ERRORLEVEL% neq 0 (
     echo ERROR: Frontend installation failed!
     pause
@@ -50,7 +50,7 @@ REM Install Hardhat Dependencies
 echo.
 echo [4/7] Installing Hardhat Dependencies...
 cd "smart contracts and etls"
-call npm install
+call npm install --legacy-peer-deps
 if %ERRORLEVEL% neq 0 (
     echo ERROR: Hardhat installation failed!
     pause
