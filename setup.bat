@@ -56,6 +56,10 @@ if %ERRORLEVEL% neq 0 (
     pause
     exit /b 1
 )
+
+REM Install Hardhat Toolbox Dependencies Explicitly
+echo Installing Hardhat toolbox dependencies...
+call npm install --save-dev @nomicfoundation/hardhat-chai-matchers@^2.1.0 @nomicfoundation/hardhat-ignition-ethers@^0.15.14 @nomicfoundation/hardhat-network-helpers@^1.1.0 @nomicfoundation/hardhat-verify@^2.1.0 @typechain/ethers-v6@^0.5.0 @typechain/hardhat@^9.0.0 @types/chai@^4.2.0 @types/mocha@>=9.1.0 chai@^4.2.0 hardhat-gas-reporter@^2.3.0 solidity-coverage@^0.8.1 ts-node@>=8.0.0 typechain@^8.3.0 typescript@>=4.5.0
 echo ✓ Hardhat dependencies installed
 cd ..
 
