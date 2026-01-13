@@ -1,0 +1,153 @@
+/* Button Component Styles - Beautiful Modern Design */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Button Variants */
+.button-default {
+  background: rgb(15, 23, 42);
+  color: rgb(255, 255, 255);
+}
+
+.button-default:hover {
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.dark .button-default {
+  background: rgb(255, 255, 255);
+  color: rgb(15, 23, 42);
+}
+
+.dark .button-default:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.button-destructive {
+  background: rgb(239, 68, 68);
+  color: rgb(255, 255, 255);
+}
+
+.button-destructive:hover {
+  background: rgba(239, 68, 68, 0.9);
+}
+
+.button-outline {
+  border: 1px solid rgb(226, 232, 240);
+  background: rgb(255, 255, 255);
+  color: rgb(15, 23, 42);
+}
+
+.button-outline:hover {
+  background: rgb(241, 245, 249);
+  color: rgb(15, 23, 42);
+}
+
+.dark .button-outline {
+  border-color: rgb(51, 65, 85);
+  background: rgb(30, 41, 59);
+  color: rgb(255, 255, 255);
+}
+
+.dark .button-outline:hover {
+  background: rgb(51, 65, 85);
+}
+
+.button-secondary {
+  background: rgb(241, 245, 249);
+  color: rgb(15, 23, 42);
+}
+
+.button-secondary:hover {
+  background: rgba(241, 245, 249, 0.8);
+}
+
+.dark .button-secondary {
+  background: rgb(30, 41, 59);
+  color: rgb(255, 255, 255);
+}
+
+.dark .button-secondary:hover {
+  background: rgba(30, 41, 59, 0.8);
+}
+
+.button-ghost {
+  background: transparent;
+  color: rgb(15, 23, 42);
+}
+
+.button-ghost:hover {
+  background: rgb(241, 245, 249);
+  color: rgb(15, 23, 42);
+}
+
+.dark .button-ghost {
+  color: rgb(255, 255, 255);
+}
+
+.dark .button-ghost:hover {
+  background: rgb(30, 41, 59);
+}
+
+.button-link {
+  background: transparent;
+  color: rgb(15, 23, 42);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.button-link:hover {
+  text-decoration: underline;
+}
+
+.dark .button-link {
+  color: rgb(255, 255, 255);
+}
+
+/* Button Sizes */
+.button-default-size {
+  height: 2.5rem;
+  padding: 0 1rem;
+}
+
+.button-sm {
+  height: 2.25rem;
+  padding: 0 0.75rem;
+  border-radius: 0.375rem;
+}
+
+.button-lg {
+  height: 2.75rem;
+  padding: 0 2rem;
+  border-radius: 0.375rem;
+}
+
+.button-icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 0;
+}
+

@@ -1,0 +1,235 @@
+/* Booking Page Styles - Skyscanner & Aviasales Inspired Design */
+/* These styles enhance the existing Tailwind classes */
+
+/* Container styling */
+.booking-page .container {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  background: #f8fafc;
+}
+
+@media (min-width: 768px) {
+  .booking-page .container {
+    padding: 2rem 2rem;
+  }
+}
+
+.dark .booking-page .container {
+  background: #0f172a;
+}
+
+/* Breadcrumb Enhancements */
+.booking-page .flex[class*="items-center"][class*="gap-2"] {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.booking-page .flex[class*="items-center"][class*="gap-2"] span:last-child {
+  color: #0770e3;
+  font-weight: 600;
+}
+
+.dark .booking-page .flex[class*="items-center"][class*="gap-2"] {
+  color: #9ca3af;
+}
+
+.dark .booking-page .flex[class*="items-center"][class*="gap-2"] span:last-child {
+  color: #60a5fa;
+}
+
+/* Card Enhancements */
+.booking-page [class*="Card"] {
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 1rem !important;
+  box-shadow: 
+    0 4px 12px -2px rgba(0, 0, 0, 0.08),
+    0 2px 6px -1px rgba(0, 0, 0, 0.04) !important;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.booking-page [class*="Card"]:hover {
+  box-shadow: 
+    0 8px 24px -4px rgba(0, 0, 0, 0.12),
+    0 4px 12px -2px rgba(0, 0, 0, 0.08) !important;
+}
+
+.dark .booking-page [class*="Card"] {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  box-shadow: 
+    0 4px 12px -2px rgba(0, 0, 0, 0.3),
+    0 2px 6px -1px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Insurance Card Special Styling */
+.booking-page [class*="Card"][class*="border-blue-500"] {
+  border: 2px solid #0770e3 !important;
+  background: linear-gradient(to bottom, #e6f2ff 0%, #ffffff 100%) !important;
+  box-shadow: 
+    0 8px 24px -4px rgba(7, 112, 227, 0.15),
+    0 4px 12px -2px rgba(7, 112, 227, 0.1) !important;
+}
+
+.dark .booking-page [class*="Card"][class*="border-blue-500"] {
+  background: linear-gradient(to bottom, rgba(7, 112, 227, 0.15) 0%, #1e293b 100%) !important;
+  border-color: #0770e3 !important;
+}
+
+/* Input Enhancements */
+.booking-page [class*="Input"] {
+  padding: 0.875rem 1rem !important;
+  border: 2px solid #e5e7eb !important;
+  border-radius: 0.5rem !important;
+  background: #ffffff !important;
+  font-size: 0.9375rem !important;
+  transition: all 0.2s !important;
+  color: #1f2937 !important;
+}
+
+.booking-page [class*="Input"]:hover {
+  border-color: #0770e3 !important;
+  background: #f8fafc !important;
+}
+
+.booking-page [class*="Input"]:focus {
+  outline: none !important;
+  border-color: #0770e3 !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 4px rgba(7, 112, 227, 0.1) !important;
+}
+
+.dark .booking-page [class*="Input"] {
+  background: #0f172a !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+.dark .booking-page [class*="Input"]:hover {
+  border-color: #0770e3 !important;
+  background: #1e293b !important;
+}
+
+.dark .booking-page [class*="Input"]:focus {
+  border-color: #0770e3 !important;
+  background: #0f172a !important;
+  box-shadow: 0 0 0 4px rgba(7, 112, 227, 0.2) !important;
+}
+
+/* Label Enhancements */
+.booking-page label {
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  color: #374151 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.dark .booking-page label {
+  color: #e5e7eb !important;
+}
+
+/* Summary Card Sticky */
+.booking-page [class*="Card"][class*="sticky"] {
+  position: sticky;
+  top: 5rem;
+  background: #ffffff !important;
+  border: 2px solid #e5e7eb !important;
+  border-radius: 1rem !important;
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 4px 10px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.dark .booking-page [class*="Card"][class*="sticky"] {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.3),
+    0 4px 10px -2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Summary Card Header Gradient */
+.booking-page [class*="CardHeader"]:has(+ [class*="CardContent"]) {
+  padding: 1.75rem !important;
+  background: linear-gradient(135deg, #0770e3 0%, #0552a5 100%) !important;
+  color: #ffffff !important;
+}
+
+.booking-page [class*="CardHeader"]:has(+ [class*="CardContent"]) [class*="CardTitle"] {
+  color: #ffffff !important;
+}
+
+/* Confirm Button */
+.booking-page button[class*="bg-blue-600"][class*="h-12"] {
+  background: #0770e3 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  padding: 1rem 2rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 
+    0 4px 14px 0 rgba(7, 112, 227, 0.4),
+    0 2px 6px 0 rgba(7, 112, 227, 0.2) !important;
+  position: relative;
+  overflow: hidden;
+  width: 100% !important;
+}
+
+.booking-page button[class*="bg-blue-600"][class*="h-12"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.booking-page button[class*="bg-blue-600"][class*="h-12"]:hover {
+  background: #0552a5 !important;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 20px 0 rgba(7, 112, 227, 0.5),
+    0 4px 10px 0 rgba(7, 112, 227, 0.3) !important;
+}
+
+.booking-page button[class*="bg-blue-600"][class*="h-12"]:hover::before {
+  left: 100%;
+}
+
+.booking-page button[class*="bg-blue-600"][class*="h-12"]:active {
+  transform: translateY(0);
+}
+
+/* Price Display in Summary */
+.booking-page .text-lg[class*="font-bold"] {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: #0770e3 !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.dark .booking-page .text-lg[class*="font-bold"] {
+  color: #60a5fa !important;
+}
+
+/* Insurance Price */
+.booking-page .text-blue-600[class*="font-bold"] {
+  color: #0770e3 !important;
+  font-weight: 700 !important;
+  font-size: 1.125rem !important;
+}
+
+.dark .booking-page .text-blue-600[class*="font-bold"] {
+  color: #60a5fa !important;
+}

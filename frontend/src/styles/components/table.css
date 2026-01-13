@@ -1,0 +1,119 @@
+/* Table Component Styles - Beautiful Modern Design */
+
+.table-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  caption-side: bottom;
+}
+
+.table-caption {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: rgb(100, 116, 139);
+}
+
+.dark .table-caption {
+  color: rgb(148, 163, 184);
+}
+
+.table-header {
+  border-bottom: 1px solid rgb(226, 232, 240);
+}
+
+.dark .table-header {
+  border-bottom-color: rgb(30, 41, 59);
+}
+
+.table-header-row {
+  border-bottom: 1px solid rgb(226, 232, 240);
+}
+
+.dark .table-header-row {
+  border-bottom-color: rgb(30, 41, 59);
+}
+
+.table-head {
+  height: 3rem;
+  padding: 0 1rem;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: 500;
+  color: rgb(100, 116, 139);
+}
+
+.dark .table-head {
+  color: rgb(148, 163, 184);
+}
+
+.table-head:has([role="checkbox"]) {
+  padding-right: 0;
+}
+
+.table-body {
+  border-bottom: 1px solid rgb(226, 232, 240);
+}
+
+.dark .table-body {
+  border-bottom-color: rgb(30, 41, 59);
+}
+
+.table-body-row:last-child {
+  border-bottom: 0;
+}
+
+.table-row {
+  border-bottom: 1px solid rgb(226, 232, 240);
+  transition: background 0.2s;
+}
+
+.table-row:hover {
+  background: rgba(248, 250, 252, 0.5);
+}
+
+.table-row[data-state="selected"] {
+  background: rgba(248, 250, 252, 1);
+}
+
+.dark .table-row {
+  border-bottom-color: rgb(30, 41, 59);
+}
+
+.dark .table-row:hover {
+  background: rgba(30, 41, 59, 0.5);
+}
+
+.dark .table-row[data-state="selected"] {
+  background: rgba(30, 41, 59, 1);
+}
+
+.table-cell {
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+.table-cell:has([role="checkbox"]) {
+  padding-right: 0;
+}
+
+.table-footer {
+  border-top: 1px solid rgb(226, 232, 240);
+  background: rgba(248, 250, 252, 0.5);
+  font-weight: 500;
+}
+
+.dark .table-footer {
+  border-top-color: rgb(30, 41, 59);
+  background: rgba(30, 41, 59, 0.5);
+}
+
+.table-footer-row:last-child {
+  border-bottom: 0;
+}
+

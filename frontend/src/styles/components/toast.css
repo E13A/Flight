@@ -1,0 +1,108 @@
+/* Toast Component Styles - Beautiful Modern Design */
+
+.toast-container {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 18.75rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(226, 232, 240);
+  animation: slide-in-right 0.3s ease-out;
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.dark .toast {
+  background: rgb(15, 23, 42);
+  border-color: rgb(30, 41, 59);
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.3),
+    0 4px 6px -4px rgba(0, 0, 0, 0.2);
+}
+
+.toast-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.toast-icon.success {
+  color: rgb(34, 197, 94);
+}
+
+.toast-icon.error {
+  color: rgb(239, 68, 68);
+}
+
+.toast-icon.info {
+  color: rgb(59, 130, 246);
+}
+
+.toast-message {
+  flex: 1;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(15, 23, 42);
+}
+
+.dark .toast-message {
+  color: rgb(255, 255, 255);
+}
+
+.toast-close-button {
+  padding: 0.25rem;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: rgb(100, 116, 139);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.toast-close-button:hover {
+  background: rgb(241, 245, 249);
+  color: rgb(15, 23, 42);
+}
+
+.dark .toast-close-button {
+  color: rgb(148, 163, 184);
+}
+
+.dark .toast-close-button:hover {
+  background: rgb(30, 41, 59);
+  color: rgb(255, 255, 255);
+}
+
+.toast-close-icon {
+  width: 1rem;
+  height: 1rem;
+}
+

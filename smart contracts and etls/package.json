@@ -1,0 +1,22 @@
+{
+  "name": "flightdelay-hardhat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.1.2",
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "hardhat": "^2.22.7"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.3",
+    "ethers": "^6.15.0"
+  }
+}

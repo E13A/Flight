@@ -1,0 +1,289 @@
+/* Insurance Page Styles - Beautiful Modern Design */
+
+.insurance-container {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .insurance-container {
+    padding: 2rem 2rem;
+  }
+}
+
+.insurance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.insurance-header-content {
+  flex: 1;
+}
+
+.insurance-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: rgb(15, 23, 42);
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+.dark .insurance-title {
+  color: rgb(255, 255, 255);
+}
+
+.insurance-subtitle {
+  color: rgb(100, 116, 139);
+}
+
+.dark .insurance-subtitle {
+  color: rgb(148, 163, 184);
+}
+
+.insurance-refresh-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgb(226, 232, 240);
+  border-radius: 0.5rem;
+  background: rgb(255, 255, 255);
+  color: rgb(15, 23, 42);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.insurance-refresh-button:hover {
+  background: rgb(248, 250, 252);
+  border-color: rgb(203, 213, 225);
+}
+
+.dark .insurance-refresh-button {
+  background: rgb(30, 41, 59);
+  border-color: rgb(51, 65, 85);
+  color: rgb(255, 255, 255);
+}
+
+.dark .insurance-refresh-button:hover {
+  background: rgb(51, 65, 85);
+  border-color: rgb(71, 85, 105);
+}
+
+/* Policy Cards */
+.insurance-policies {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.insurance-policy-card {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(226, 232, 240);
+  border-radius: 1rem;
+  box-shadow: 
+    0 2px 8px -2px rgba(0, 0, 0, 0.06),
+    0 1px 4px -1px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.insurance-policy-card:hover {
+  box-shadow: 
+    0 8px 24px -4px rgba(0, 0, 0, 0.12),
+    0 4px 12px -2px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+  border-color: rgba(165, 180, 252, 0.5);
+}
+
+.dark .insurance-policy-card {
+  background: rgb(15, 23, 42);
+  border-color: rgb(30, 41, 59);
+  box-shadow: 
+    0 2px 8px -2px rgba(0, 0, 0, 0.2),
+    0 1px 4px -1px rgba(0, 0, 0, 0.15);
+}
+
+.dark .insurance-policy-card:hover {
+  border-color: rgba(129, 140, 248, 0.5);
+}
+
+.insurance-policy-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.insurance-policy-header-content {
+  flex: 1;
+}
+
+.insurance-policy-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgb(15, 23, 42);
+  margin-bottom: 0.25rem;
+}
+
+.dark .insurance-policy-title {
+  color: rgb(255, 255, 255);
+}
+
+.insurance-policy-id {
+  font-size: 0.875rem;
+  color: rgb(100, 116, 139);
+}
+
+.dark .insurance-policy-id {
+  color: rgb(148, 163, 184);
+}
+
+.insurance-policy-status {
+  display: inline-flex;
+  padding: 0.125rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.insurance-policy-status.active {
+  background: rgba(220, 252, 231, 1);
+  color: rgb(21, 128, 61);
+}
+
+.dark .insurance-policy-status.active {
+  background: rgba(20, 83, 45, 0.3);
+  color: rgb(74, 222, 128);
+}
+
+.insurance-policy-status.claimed {
+  background: rgba(219, 234, 254, 1);
+  color: rgb(29, 78, 216);
+}
+
+.dark .insurance-policy-status.claimed {
+  background: rgba(30, 64, 175, 0.3);
+  color: rgb(96, 165, 250);
+}
+
+.insurance-policy-status.completed {
+  background: rgb(241, 245, 249);
+  color: rgb(51, 65, 85);
+}
+
+.dark .insurance-policy-status.completed {
+  background: rgb(30, 41, 59);
+  color: rgb(148, 163, 184);
+}
+
+.insurance-policy-content {
+  padding: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.insurance-policy-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .insurance-policy-details {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.insurance-policy-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.insurance-policy-detail-label {
+  font-size: 0.75rem;
+  color: rgb(100, 116, 139);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.dark .insurance-policy-detail-label {
+  color: rgb(148, 163, 184);
+}
+
+.insurance-policy-detail-value {
+  font-weight: 600;
+  color: rgb(15, 23, 42);
+  font-size: 0.875rem;
+}
+
+.dark .insurance-policy-detail-value {
+  color: rgb(255, 255, 255);
+}
+
+.insurance-policy-detail-value.mono {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: rgb(148, 163, 184);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 6rem;
+}
+
+.dark .insurance-policy-detail-value.mono {
+  color: rgb(100, 116, 139);
+}
+
+.insurance-policy-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgb(241, 245, 249);
+  background: rgba(239, 246, 255, 0.5);
+}
+
+.dark .insurance-policy-footer {
+  border-top-color: rgb(30, 41, 59);
+  background: rgba(30, 64, 175, 0.1);
+}
+
+.insurance-policy-footer.active {
+  background: rgba(220, 252, 231, 0.5);
+  border-top-color: rgba(187, 247, 208, 1);
+}
+
+.dark .insurance-policy-footer.active {
+  background: rgba(20, 83, 45, 0.1);
+  border-top-color: rgba(20, 83, 45, 0.5);
+}
+
+.insurance-policy-footer-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: rgb(29, 78, 216);
+}
+
+.dark .insurance-policy-footer-content {
+  color: rgb(96, 165, 250);
+}
+
+.insurance-policy-footer-content.active {
+  color: rgb(21, 128, 61);
+}
+
+.dark .insurance-policy-footer-content.active {
+  color: rgb(74, 222, 128);
+}
+
+.insurance-policy-footer-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+

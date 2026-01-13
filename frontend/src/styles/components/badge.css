@@ -1,0 +1,74 @@
+/* Badge Component Styles - Beautiful Modern Design */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.375rem;
+  border: 1px solid transparent;
+  padding: 0.125rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.badge:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* Badge Variants */
+.badge-default {
+  background: rgb(15, 23, 42);
+  color: rgb(255, 255, 255);
+  box-shadow: 
+    0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+.badge-default:hover {
+  background: rgba(15, 23, 42, 0.8);
+}
+
+.badge-secondary {
+  background: rgb(241, 245, 249);
+  color: rgb(15, 23, 42);
+}
+
+.badge-secondary:hover {
+  background: rgba(241, 245, 249, 0.8);
+}
+
+.dark .badge-secondary {
+  background: rgb(30, 41, 59);
+  color: rgb(255, 255, 255);
+}
+
+.dark .badge-secondary:hover {
+  background: rgba(30, 41, 59, 0.8);
+}
+
+.badge-destructive {
+  background: rgb(239, 68, 68);
+  color: rgb(255, 255, 255);
+  box-shadow: 
+    0 1px 3px 0 rgba(239, 68, 68, 0.2),
+    0 1px 2px -1px rgba(239, 68, 68, 0.1);
+}
+
+.badge-destructive:hover {
+  background: rgba(239, 68, 68, 0.8);
+}
+
+.badge-outline {
+  border-color: rgb(226, 232, 240);
+  color: rgb(15, 23, 42);
+  background: transparent;
+}
+
+.dark .badge-outline {
+  border-color: rgb(51, 65, 85);
+  color: rgb(255, 255, 255);
+}
+

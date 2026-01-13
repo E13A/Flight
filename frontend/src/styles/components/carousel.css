@@ -1,0 +1,107 @@
+/* Carousel Component Styles - Beautiful Modern Design */
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-out;
+  height: 100%;
+}
+
+.carousel-item {
+  width: 100%;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 10;
+}
+
+.carousel:hover .carousel-control {
+  opacity: 1;
+}
+
+.carousel-control-left {
+  left: 0;
+  justify-content: flex-start;
+}
+
+.carousel-control-right {
+  right: 0;
+  justify-content: flex-end;
+}
+
+.carousel-button {
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 
+    0 2px 8px -2px rgba(0, 0, 0, 0.1),
+    0 1px 4px -1px rgba(0, 0, 0, 0.05);
+}
+
+.carousel-button:hover {
+  background: rgb(255, 255, 255);
+  box-shadow: 
+    0 4px 12px -2px rgba(0, 0, 0, 0.15),
+    0 2px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-button-icon {
+  width: 1rem;
+  height: 1rem;
+  color: rgb(15, 23, 42);
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.carousel-indicator {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+  padding: 0;
+}
+
+.carousel-indicator:hover {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.carousel-indicator.active {
+  width: 1rem;
+  background: rgb(255, 255, 255);
+}
+

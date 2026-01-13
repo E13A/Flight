@@ -1,0 +1,71 @@
+/* Wallet Connect Component Styles - Beautiful Modern Design */
+
+.wallet-connect-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  outline: none;
+}
+
+.wallet-connect-button:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.wallet-connect-button.default {
+  background: rgb(15, 23, 42);
+  color: rgb(255, 255, 255);
+}
+
+.wallet-connect-button.default:hover {
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.dark .wallet-connect-button.default {
+  background: rgb(255, 255, 255);
+  color: rgb(15, 23, 42);
+}
+
+.dark .wallet-connect-button.default:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.wallet-connect-button.outline {
+  border: 1px solid rgb(226, 232, 240);
+  background: rgb(255, 255, 255);
+  color: rgb(15, 23, 42);
+}
+
+.wallet-connect-button.outline:hover {
+  background: rgb(241, 245, 249);
+}
+
+.dark .wallet-connect-button.outline {
+  border-color: rgb(51, 65, 85);
+  background: rgb(30, 41, 59);
+  color: rgb(255, 255, 255);
+}
+
+.dark .wallet-connect-button.outline:hover {
+  background: rgb(51, 65, 85);
+}
+
+.wallet-connect-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.wallet-connect-address {
+  font-family: monospace;
+  font-size: 0.875rem;
+}
+

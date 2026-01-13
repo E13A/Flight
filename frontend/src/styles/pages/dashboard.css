@@ -1,0 +1,329 @@
+/* Dashboard Page Styles - Beautiful Modern Design */
+
+.dashboard-container {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .dashboard-container {
+    padding: 2rem 2rem;
+  }
+}
+
+/* Sidebar */
+.dashboard-sidebar {
+  width: 16rem;
+  display: none;
+  border-right: 1px solid rgb(226, 232, 240);
+  padding-right: 2rem;
+  min-height: calc(100vh - 8rem);
+}
+
+@media (min-width: 1024px) {
+  .dashboard-sidebar {
+    display: block;
+  }
+}
+
+.dark .dashboard-sidebar {
+  border-right-color: rgb(30, 41, 59);
+}
+
+.dashboard-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dashboard-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(71, 85, 105);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.dashboard-nav-link:hover {
+  background: rgb(241, 245, 249);
+  color: rgb(15, 23, 42);
+}
+
+.dashboard-nav-link.active {
+  background: rgba(239, 246, 255, 1);
+  color: rgb(37, 99, 235);
+}
+
+.dark .dashboard-nav-link {
+  color: rgb(148, 163, 184);
+}
+
+.dark .dashboard-nav-link:hover {
+  background: rgb(15, 23, 42);
+  color: rgb(255, 255, 255);
+}
+
+.dark .dashboard-nav-link.active {
+  background: rgba(30, 64, 175, 0.2);
+  color: rgb(96, 165, 250);
+}
+
+.dashboard-nav-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.dashboard-nav-disconnect {
+  margin-top: 2rem;
+  color: rgb(220, 38, 38);
+}
+
+.dashboard-nav-disconnect:hover {
+  background: rgba(254, 242, 242, 1);
+  color: rgb(185, 28, 28);
+}
+
+.dark .dashboard-nav-disconnect {
+  color: rgb(248, 113, 113);
+}
+
+.dark .dashboard-nav-disconnect:hover {
+  background: rgba(127, 29, 29, 0.2);
+  color: rgb(239, 68, 68);
+}
+
+/* Main Content */
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dashboard-header {
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: rgb(15, 23, 42);
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+.dark .dashboard-title {
+  color: rgb(255, 255, 255);
+}
+
+.dashboard-subtitle {
+  color: rgb(100, 116, 139);
+}
+
+.dark .dashboard-subtitle {
+  color: rgb(148, 163, 184);
+}
+
+/* Stats Grid */
+.dashboard-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .dashboard-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.dashboard-stat-card {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(226, 232, 240);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 
+    0 2px 8px -2px rgba(0, 0, 0, 0.06),
+    0 1px 4px -1px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dashboard-stat-card:hover {
+  box-shadow: 
+    0 8px 24px -4px rgba(0, 0, 0, 0.12),
+    0 4px 12px -2px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.dark .dashboard-stat-card {
+  background: rgb(15, 23, 42);
+  border-color: rgb(30, 41, 59);
+  box-shadow: 
+    0 2px 8px -2px rgba(0, 0, 0, 0.2),
+    0 1px 4px -1px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-stat-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(100, 116, 139);
+  margin-bottom: 0.5rem;
+}
+
+.dark .dashboard-stat-label {
+  color: rgb(148, 163, 184);
+}
+
+.dashboard-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgb(15, 23, 42);
+}
+
+.dark .dashboard-stat-value {
+  color: rgb(255, 255, 255);
+}
+
+.dashboard-stat-value.success {
+  color: rgb(22, 163, 74);
+}
+
+.dark .dashboard-stat-value.success {
+  color: rgb(74, 222, 128);
+}
+
+/* Activity Card */
+.dashboard-activity-card {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(226, 232, 240);
+  border-radius: 1rem;
+  box-shadow: 
+    0 2px 8px -2px rgba(0, 0, 0, 0.06),
+    0 1px 4px -1px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.dark .dashboard-activity-card {
+  background: rgb(15, 23, 42);
+  border-color: rgb(30, 41, 59);
+  box-shadow: 
+    0 2px 8px -2px rgba(0, 0, 0, 0.2),
+    0 1px 4px -1px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-activity-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgb(241, 245, 249);
+}
+
+.dark .dashboard-activity-header {
+  border-bottom-color: rgb(30, 41, 59);
+}
+
+.dashboard-activity-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: rgb(15, 23, 42);
+  margin-bottom: 0.25rem;
+}
+
+.dark .dashboard-activity-title {
+  color: rgb(255, 255, 255);
+}
+
+.dashboard-activity-description {
+  font-size: 0.875rem;
+  color: rgb(100, 116, 139);
+}
+
+.dark .dashboard-activity-description {
+  color: rgb(148, 163, 184);
+}
+
+.dashboard-activity-content {
+  padding: 1.5rem;
+}
+
+/* Table Styles */
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dashboard-table-header {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(100, 116, 139);
+  border-bottom: 1px solid rgb(241, 245, 249);
+}
+
+.dark .dashboard-table-header {
+  color: rgb(148, 163, 184);
+  border-bottom-color: rgb(30, 41, 59);
+}
+
+.dashboard-table-row {
+  border-bottom: 1px solid rgb(241, 245, 249);
+  transition: background 0.2s;
+}
+
+.dashboard-table-row:hover {
+  background: rgb(248, 250, 252);
+}
+
+.dark .dashboard-table-row {
+  border-bottom-color: rgb(30, 41, 59);
+}
+
+.dark .dashboard-table-row:hover {
+  background: rgb(30, 41, 59);
+}
+
+.dashboard-table-cell {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: rgb(15, 23, 42);
+}
+
+.dark .dashboard-table-cell {
+  color: rgb(255, 255, 255);
+}
+
+.dashboard-status-badge {
+  display: inline-flex;
+  padding: 0.125rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.dashboard-status-badge.active {
+  background: rgba(220, 252, 231, 1);
+  color: rgb(21, 128, 61);
+}
+
+.dark .dashboard-status-badge.active {
+  background: rgba(20, 83, 45, 0.3);
+  color: rgb(74, 222, 128);
+}
+
+.dashboard-status-badge.completed {
+  background: rgb(241, 245, 249);
+  color: rgb(51, 65, 85);
+}
+
+.dark .dashboard-status-badge.completed {
+  background: rgb(30, 41, 59);
+  color: rgb(148, 163, 184);
+}
+

@@ -1,0 +1,91 @@
+/* Accordion Component Styles - Beautiful Modern Design */
+
+.accordion {
+  width: 100%;
+}
+
+.accordion-item {
+  border-bottom: 1px solid rgb(226, 232, 240);
+}
+
+.dark .accordion-item {
+  border-bottom-color: rgb(30, 41, 59);
+}
+
+.accordion-trigger {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: rgb(15, 23, 42);
+}
+
+.accordion-trigger:hover {
+  text-decoration: underline;
+}
+
+.accordion-trigger:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.dark .accordion-trigger {
+  color: rgb(255, 255, 255);
+}
+
+.accordion-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.accordion-trigger[data-state="open"] .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  overflow: hidden;
+  font-size: 0.875rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.accordion-content[data-state="open"] {
+  animation: accordion-down 0.2s ease-out;
+  max-height: 24rem;
+  opacity: 1;
+  padding-bottom: 1rem;
+}
+
+.accordion-content[data-state="closed"] {
+  animation: accordion-up 0.2s ease-out;
+  max-height: 0;
+  opacity: 0;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+

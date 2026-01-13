@@ -1,0 +1,123 @@
+/* Radio Group Component Styles - Beautiful Modern Design */
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.radio-option {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  border: 1px solid rgb(226, 232, 240);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.radio-option:hover {
+  border-color: rgb(203, 213, 225);
+}
+
+.radio-option.selected {
+  border-color: rgb(15, 23, 42);
+  background: rgb(248, 250, 252);
+  box-shadow: 0 0 0 1px rgb(15, 23, 42);
+}
+
+.dark .radio-option {
+  border-color: rgb(30, 41, 59);
+}
+
+.dark .radio-option:hover {
+  border-color: rgb(51, 65, 85);
+}
+
+.dark .radio-option.selected {
+  border-color: rgb(241, 245, 249);
+  background: rgb(15, 23, 42);
+  box-shadow: 0 0 0 1px rgb(241, 245, 249);
+}
+
+.radio-input-wrapper {
+  display: flex;
+  align-items: center;
+  height: 1.25rem;
+  margin-right: 0.75rem;
+  margin-top: 0.125rem;
+}
+
+.radio-input {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgb(203, 213, 225);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+  appearance: none;
+  position: relative;
+}
+
+.radio-input:checked {
+  border-color: rgb(15, 23, 42);
+}
+
+.radio-input:checked::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: rgb(15, 23, 42);
+}
+
+.dark .radio-input {
+  border-color: rgb(51, 65, 85);
+}
+
+.dark .radio-input:checked {
+  border-color: rgb(241, 245, 249);
+}
+
+.dark .radio-input:checked::before {
+  background: rgb(241, 245, 249);
+}
+
+.radio-content {
+  flex: 1;
+  font-size: 0.875rem;
+}
+
+.radio-label {
+  display: block;
+  font-weight: 500;
+  color: rgb(15, 23, 42);
+  margin-bottom: 0.25rem;
+}
+
+.radio-option.selected .radio-label {
+  color: rgb(15, 23, 42);
+}
+
+.dark .radio-label {
+  color: rgb(203, 213, 225);
+}
+
+.dark .radio-option.selected .radio-label {
+  color: rgb(255, 255, 255);
+}
+
+.radio-description {
+  display: block;
+  margin-top: 0.25rem;
+  color: rgb(100, 116, 139);
+}
+
+.dark .radio-description {
+  color: rgb(148, 163, 184);
+}
+

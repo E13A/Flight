@@ -1,0 +1,311 @@
+/* Flights Page Styles - Skyscanner & Aviasales Inspired Design */
+/* These styles enhance the existing Tailwind classes */
+
+/* Container styling */
+.flights-page .container {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%);
+}
+
+@media (min-width: 768px) {
+  .flights-page .container {
+    padding: 2rem 2rem;
+  }
+}
+
+.dark .flights-page .container {
+  background: linear-gradient(to bottom, #0f172a 0%, #1e293b 100%);
+}
+
+/* Header Section Enhancements */
+.flights-page h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .flights-page h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.dark .flights-page h1 {
+  color: #ffffff;
+}
+
+.flights-page p {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.dark .flights-page p {
+  color: #9ca3af;
+}
+
+/* Search Card - Skyscanner Style */
+.flights-page [class*="Card"] {
+  background: #ffffff !important;
+  border: none !important;
+  border-radius: 1rem !important;
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 4px 10px -2px rgba(0, 0, 0, 0.05) !important;
+  margin-bottom: 2rem;
+  padding: 2rem !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.flights-page [class*="Card"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0770e3 0%, #00a698 50%, #ff6b35 100%);
+  z-index: 1;
+}
+
+.dark .flights-page [class*="Card"] {
+  background: #1e293b !important;
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.3),
+    0 4px 10px -2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Input Enhancements */
+.flights-page [class*="Input"] {
+  padding: 1rem 1rem 1rem 2.75rem !important;
+  border: 2px solid #e5e7eb !important;
+  border-radius: 0.5rem !important;
+  background: #ffffff !important;
+  font-size: 0.9375rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  color: #1f2937 !important;
+}
+
+.flights-page [class*="Input"]:hover {
+  border-color: #0770e3 !important;
+  background: #f8fafc !important;
+}
+
+.flights-page [class*="Input"]:focus {
+  outline: none !important;
+  border-color: #0770e3 !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 4px rgba(7, 112, 227, 0.1) !important;
+}
+
+.dark .flights-page [class*="Input"] {
+  background: #0f172a !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+.dark .flights-page [class*="Input"]:hover {
+  border-color: #0770e3 !important;
+  background: #1e293b !important;
+}
+
+.dark .flights-page [class*="Input"]:focus {
+  border-color: #0770e3 !important;
+  background: #0f172a !important;
+  box-shadow: 0 0 0 4px rgba(7, 112, 227, 0.2) !important;
+}
+
+/* Label Enhancements */
+.flights-page label {
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #6b7280 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.dark .flights-page label {
+  color: #9ca3af !important;
+}
+
+/* Search Button - Skyscanner Style */
+.flights-page button[class*="bg-blue-600"] {
+  background: #0770e3 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  padding: 1rem 2rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 
+    0 4px 14px 0 rgba(7, 112, 227, 0.4),
+    0 2px 6px 0 rgba(7, 112, 227, 0.2) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.flights-page button[class*="bg-blue-600"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.flights-page button[class*="bg-blue-600"]:hover {
+  background: #0552a5 !important;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 20px 0 rgba(7, 112, 227, 0.5),
+    0 4px 10px 0 rgba(7, 112, 227, 0.3) !important;
+}
+
+.flights-page button[class*="bg-blue-600"]:hover::before {
+  left: 100%;
+}
+
+.flights-page button[class*="bg-blue-600"]:active {
+  transform: translateY(0);
+}
+
+/* Flight Card Enhancements */
+.flights-page .group[class*="bg-white"] {
+  background: #ffffff !important;
+  border: 2px solid #e5e7eb !important;
+  border-radius: 1rem !important;
+  padding: 1.75rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.flights-page .group[class*="bg-white"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #0770e3;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.flights-page .group[class*="bg-white"]:hover {
+  border-color: #0770e3 !important;
+  box-shadow: 
+    0 12px 32px -4px rgba(7, 112, 227, 0.15),
+    0 6px 16px -2px rgba(7, 112, 227, 0.1) !important;
+  transform: translateY(-4px);
+}
+
+.flights-page .group[class*="bg-white"]:hover::before {
+  opacity: 1;
+}
+
+.dark .flights-page .group[class*="bg-white"] {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+.dark .flights-page .group[class*="bg-white"]:hover {
+  border-color: #0770e3 !important;
+  box-shadow: 
+    0 12px 32px -4px rgba(7, 112, 227, 0.25),
+    0 6px 16px -2px rgba(7, 112, 227, 0.15) !important;
+}
+
+/* Flight Icon Wrapper */
+.flights-page .w-16.h-16[class*="rounded-full"] {
+  width: 4.5rem !important;
+  height: 4.5rem !important;
+  border-radius: 0.75rem !important;
+  background: linear-gradient(135deg, #e6f2ff 0%, #cfe2ff 100%) !important;
+  box-shadow: 0 2px 8px rgba(7, 112, 227, 0.15) !important;
+}
+
+.dark .flights-page .w-16.h-16[class*="rounded-full"] {
+  background: linear-gradient(135deg, rgba(7, 112, 227, 0.2) 0%, rgba(7, 112, 227, 0.1) 100%) !important;
+}
+
+/* Flight Times */
+.flights-page h3[class*="text-lg"] {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: #1f2937 !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.dark .flights-page h3[class*="text-lg"] {
+  color: #ffffff !important;
+}
+
+/* Price Display */
+.flights-page .text-xl[class*="font-bold"] {
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+  color: #0770e3 !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.dark .flights-page .text-xl[class*="font-bold"] {
+  color: #60a5fa !important;
+}
+
+/* Select Button */
+.flights-page button[class*="rounded-full"][class*="bg-slate-900"] {
+  background: #0770e3 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  font-weight: 600 !important;
+  font-size: 0.9375rem !important;
+  padding: 0.875rem 2rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 
+    0 4px 12px 0 rgba(7, 112, 227, 0.3),
+    0 2px 6px 0 rgba(7, 112, 227, 0.2) !important;
+}
+
+.flights-page button[class*="rounded-full"][class*="bg-slate-900"]:hover {
+  background: #0552a5 !important;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 20px 0 rgba(7, 112, 227, 0.4),
+    0 4px 10px 0 rgba(7, 112, 227, 0.3) !important;
+}
+
+.dark .flights-page button[class*="rounded-full"][class*="bg-white"] {
+  background: #0770e3 !important;
+  color: #ffffff !important;
+}
+
+.dark .flights-page button[class*="rounded-full"][class*="bg-white"]:hover {
+  background: #0552a5 !important;
+}
+
+/* Empty State */
+.flights-page .text-center[class*="text-slate-500"] {
+  text-align: center;
+  color: #6b7280;
+  padding: 4rem 1rem;
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 2px dashed #e5e7eb;
+}
+
+.dark .flights-page .text-center[class*="text-slate-500"] {
+  background: #1e293b;
+  border-color: #334155;
+  color: #9ca3af;
+}

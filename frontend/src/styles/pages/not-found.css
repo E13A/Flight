@@ -1,0 +1,114 @@
+/* Not Found Page Styles - Beautiful Modern Design */
+
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.not-found-icon-wrapper {
+  margin-bottom: 2rem;
+  width: 6rem;
+  height: 6rem;
+  background: rgba(239, 246, 255, 1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.dark .not-found-icon-wrapper {
+  background: rgba(30, 64, 175, 0.2);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.not-found-icon {
+  width: 3rem;
+  height: 3rem;
+  color: rgb(37, 99, 235);
+  transform: rotate(12deg);
+}
+
+.dark .not-found-icon {
+  color: rgb(96, 165, 250);
+}
+
+.not-found-code {
+  font-size: 3.75rem;
+  font-weight: 700;
+  color: rgb(15, 23, 42);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .not-found-code {
+    font-size: 4.5rem;
+  }
+}
+
+.dark .not-found-code {
+  color: rgb(255, 255, 255);
+}
+
+.not-found-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgb(51, 65, 85);
+  margin-bottom: 1.5rem;
+}
+
+.dark .not-found-title {
+  color: rgb(203, 213, 225);
+}
+
+.not-found-description {
+  color: rgb(100, 116, 139);
+  max-width: 28rem;
+  margin: 0 auto 2.5rem;
+  line-height: 1.75;
+}
+
+.dark .not-found-description {
+  color: rgb(148, 163, 184);
+}
+
+.not-found-button {
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, rgb(37, 99, 235) 0%, rgb(29, 78, 216) 100%);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 4px 12px -2px rgba(37, 99, 235, 0.3),
+    0 2px 4px -1px rgba(37, 99, 235, 0.2);
+}
+
+.not-found-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 20px -4px rgba(37, 99, 235, 0.4),
+    0 4px 8px -2px rgba(37, 99, 235, 0.3);
+}
+
+.not-found-button:active {
+  transform: translateY(0);
+}
+

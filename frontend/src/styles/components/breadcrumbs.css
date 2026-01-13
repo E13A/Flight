@@ -1,0 +1,86 @@
+/* Breadcrumbs Component Styles - Beautiful Modern Design */
+
+.breadcrumbs {
+  display: flex;
+}
+
+.breadcrumbs-list {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .breadcrumbs-list {
+    gap: 0.75rem;
+  }
+}
+
+.breadcrumbs-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.breadcrumbs-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(51, 65, 85);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbs-link:hover {
+  color: rgb(15, 23, 42);
+}
+
+.breadcrumbs-link.home {
+  display: inline-flex;
+  align-items: center;
+}
+
+.dark .breadcrumbs-link {
+  color: rgb(148, 163, 184);
+}
+
+.dark .breadcrumbs-link:hover {
+  color: rgb(255, 255, 255);
+}
+
+.breadcrumbs-separator {
+  width: 1rem;
+  height: 1rem;
+  color: rgb(148, 163, 184);
+  margin: 0 0.25rem;
+}
+
+.dark .breadcrumbs-separator {
+  color: rgb(100, 116, 139);
+}
+
+.breadcrumbs-current {
+  margin-left: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(100, 116, 139);
+  pointer-events: none;
+  cursor: default;
+}
+
+@media (min-width: 768px) {
+  .breadcrumbs-current {
+    margin-left: 0.5rem;
+  }
+}
+
+.dark .breadcrumbs-current {
+  color: rgb(100, 116, 139);
+}
+
+.breadcrumbs-home-icon {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+

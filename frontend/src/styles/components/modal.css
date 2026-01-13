@@ -1,0 +1,112 @@
+/* Modal Component Styles - Beautiful Modern Design */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  padding: 1rem;
+  animation: fade-in 0.2s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 32rem;
+  position: relative;
+  animation: zoom-in 0.2s ease-out;
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.dark .modal-content {
+  background: rgb(15, 23, 42);
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.4),
+    0 8px 10px -6px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid rgb(226, 232, 240);
+}
+
+.dark .modal-header {
+  border-bottom-color: rgb(30, 41, 59);
+}
+
+.modal-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: rgb(15, 23, 42);
+}
+
+.dark .modal-title {
+  color: rgb(255, 255, 255);
+}
+
+.modal-close-button {
+  padding: 0.25rem;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: rgb(100, 116, 139);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close-button:hover {
+  background: rgb(241, 245, 249);
+  color: rgb(15, 23, 42);
+}
+
+.dark .modal-close-button {
+  color: rgb(148, 163, 184);
+}
+
+.dark .modal-close-button:hover {
+  background: rgb(30, 41, 59);
+  color: rgb(255, 255, 255);
+}
+
+.modal-close-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.modal-body {
+  padding: 1rem;
+}
+

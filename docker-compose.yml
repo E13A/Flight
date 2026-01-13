@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+      POSTGRES_DB: flight_insurance_db
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+      - "./database and erd/:/docker-entrypoint-initdb.d/"
+    ports:
+      - "5435:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  backend:
+    build:
+      context: ./backend
+    command: uvicorn config.asgi:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./backend:/app
+      - ./logs:/app/logs
+    ports:
+      - "8000:8000"
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+      POSTGRES_DB: flight_insurance_db
+      DEBUG: "True"
+      SECRET_KEY: "dev-secret-key"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+    command: npm run dev
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    depends_on:
+      - backend
+  # Optional: mocked blockchain node if needed via Hardhat
+  # hardhat-node:
+  #   image: node:18
+  #   working_dir: /app
+  #   volumes:
+  #     - "./smart contracts and etls":/app
+  #   command: npx hardhat node --hostname 0.0.0.0
+  #   ports:
+  #     - "8545:8545"

@@ -1,0 +1,84 @@
+# Dependencies and build outputs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.pnpm-debug.log*
+
+# Python virtual environment
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Database
+*.db
+*.sqlite3
+db.sqlite3
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+security/logs/*.log
+
+# Hardhat
+cache/
+artifacts/
+typechain/
+typechain-types/
+
+# Coverage
+coverage/
+.nyc_output
+
+# Next.js
+.next/
+out/
+.vercel
+
+# Misc
+.cache/
+temp/
+tmp/
+*.tmp
+
+# Keep necessary files but ignore their contents
+!security/logs/.gitkeep
+!backend/venv/.gitkeep
+
+# Deployed addresses (keep in Git for sharing)
+# deployed_addresses.json is kept for blockchain config

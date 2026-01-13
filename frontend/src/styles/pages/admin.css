@@ -1,0 +1,288 @@
+/* Admin Page Styles - Beautiful Modern Design */
+
+.admin-container {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .admin-container {
+    padding: 2rem 2rem;
+  }
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.admin-header-content {
+  flex: 1;
+}
+
+.admin-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: rgb(15, 23, 42);
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+.dark .admin-title {
+  color: rgb(255, 255, 255);
+}
+
+.admin-subtitle {
+  color: rgb(100, 116, 139);
+}
+
+.dark .admin-subtitle {
+  color: rgb(148, 163, 184);
+}
+
+.admin-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(254, 242, 242, 1);
+  color: rgb(185, 28, 28);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(254, 226, 226, 1);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.dark .admin-status-badge {
+  background: rgba(127, 29, 29, 0.2);
+  color: rgb(248, 113, 113);
+  border-color: rgba(127, 29, 29, 0.5);
+}
+
+.admin-status-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* KPI Cards */
+.admin-kpi-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .admin-kpi-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.admin-kpi-card {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(226, 232, 240);
+  border-left-width: 4px;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 
+    0 2px 8px -2px rgba(0, 0, 0, 0.06),
+    0 1px 4px -1px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.admin-kpi-card:hover {
+  box-shadow: 
+    0 8px 24px -4px rgba(0, 0, 0, 0.12),
+    0 4px 12px -2px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.dark .admin-kpi-card {
+  background: rgb(15, 23, 42);
+  border-color: rgb(30, 41, 59);
+  box-shadow: 
+    0 2px 8px -2px rgba(0, 0, 0, 0.2),
+    0 1px 4px -1px rgba(0, 0, 0, 0.15);
+}
+
+.admin-kpi-card.blue {
+  border-left-color: rgb(59, 130, 246);
+}
+
+.admin-kpi-card.green {
+  border-left-color: rgb(34, 197, 94);
+}
+
+.admin-kpi-card.purple {
+  border-left-color: rgb(168, 85, 247);
+}
+
+.admin-kpi-card.orange {
+  border-left-color: rgb(249, 115, 22);
+}
+
+.admin-kpi-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.admin-kpi-text {
+  flex: 1;
+}
+
+.admin-kpi-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(100, 116, 139);
+  margin-bottom: 0.25rem;
+}
+
+.dark .admin-kpi-label {
+  color: rgb(148, 163, 184);
+}
+
+.admin-kpi-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgb(15, 23, 42);
+  margin-top: 0.25rem;
+}
+
+.dark .admin-kpi-value {
+  color: rgb(255, 255, 255);
+}
+
+.admin-kpi-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.admin-kpi-icon.blue {
+  background: rgba(219, 234, 254, 1);
+  color: rgb(37, 99, 235);
+}
+
+.dark .admin-kpi-icon.blue {
+  background: rgba(30, 64, 175, 0.5);
+  color: rgb(96, 165, 250);
+}
+
+.admin-kpi-icon.green {
+  background: rgba(220, 252, 231, 1);
+  color: rgb(22, 163, 74);
+}
+
+.dark .admin-kpi-icon.green {
+  background: rgba(20, 83, 45, 0.5);
+  color: rgb(74, 222, 128);
+}
+
+.admin-kpi-icon.purple {
+  background: rgba(243, 232, 255, 1);
+  color: rgb(147, 51, 234);
+}
+
+.dark .admin-kpi-icon.purple {
+  background: rgba(88, 28, 135, 0.5);
+  color: rgb(196, 181, 253);
+}
+
+.admin-kpi-icon.orange {
+  background: rgba(255, 237, 213, 1);
+  color: rgb(234, 88, 12);
+}
+
+.dark .admin-kpi-icon.orange {
+  background: rgba(154, 52, 18, 0.5);
+  color: rgb(251, 146, 60);
+}
+
+/* Chart Cards */
+.admin-charts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .admin-charts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.admin-chart-card {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(226, 232, 240);
+  border-radius: 1rem;
+  box-shadow: 
+    0 2px 8px -2px rgba(0, 0, 0, 0.06),
+    0 1px 4px -1px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.dark .admin-chart-card {
+  background: rgb(15, 23, 42);
+  border-color: rgb(30, 41, 59);
+  box-shadow: 
+    0 2px 8px -2px rgba(0, 0, 0, 0.2),
+    0 1px 4px -1px rgba(0, 0, 0, 0.15);
+}
+
+.admin-chart-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgb(241, 245, 249);
+}
+
+.dark .admin-chart-header {
+  border-bottom-color: rgb(30, 41, 59);
+}
+
+.admin-chart-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: rgb(15, 23, 42);
+}
+
+.dark .admin-chart-title {
+  color: rgb(255, 255, 255);
+}
+
+.admin-chart-content {
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(248, 250, 252);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-top: 1px solid rgb(241, 245, 249);
+  padding: 2rem;
+}
+
+.dark .admin-chart-content {
+  background: rgba(15, 23, 42, 0.5);
+  border-top-color: rgb(30, 41, 59);
+}
+
+.admin-chart-placeholder {
+  color: rgb(148, 163, 184);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.dark .admin-chart-placeholder {
+  color: rgb(100, 116, 139);
+}
+

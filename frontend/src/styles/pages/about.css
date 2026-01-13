@@ -1,0 +1,233 @@
+/* About Page Styles - Beautiful Modern Design */
+
+.about-container {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .about-container {
+    padding: 4rem 2rem;
+  }
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: rgb(15, 23, 42);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .about-title {
+    font-size: 3rem;
+  }
+}
+
+.dark .about-title {
+  color: rgb(255, 255, 255);
+}
+
+.about-description {
+  font-size: 1.25rem;
+  color: rgb(100, 116, 139);
+  max-width: 42rem;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+.dark .about-description {
+  color: rgb(148, 163, 184);
+}
+
+/* Bento Grid */
+.about-bento-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 1.5rem;
+  max-width: 75rem;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .about-bento-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 37.5rem;
+  }
+}
+
+.about-bento-large {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  .about-bento-large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+.about-bento-large:hover {
+  transform: scale(1.02);
+}
+
+.about-bento-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgb(37, 99, 235) 0%, rgb(29, 78, 216) 100%);
+}
+
+.about-bento-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-bento-large:hover .about-bento-image {
+  transform: scale(1.05);
+}
+
+.about-bento-content {
+  position: relative;
+  height: 100%;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: rgb(255, 255, 255);
+}
+
+@media (min-width: 768px) {
+  .about-bento-content {
+    padding: 2.5rem;
+  }
+}
+
+.about-bento-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.about-bento-text {
+  font-size: 1.125rem;
+  color: rgba(191, 219, 254, 1);
+  max-width: 32rem;
+  line-height: 1.75;
+}
+
+.about-bento-card {
+  background: rgb(248, 250, 252);
+  border: none;
+  box-shadow: none;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 12px 32px -4px rgba(0, 0, 0, 0.1),
+    0 4px 12px -2px rgba(0, 0, 0, 0.05);
+}
+
+.dark .about-bento-card {
+  background: rgb(15, 23, 42);
+}
+
+.about-bento-stat-value {
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgb(37, 99, 235);
+  margin-bottom: 0.5rem;
+}
+
+.about-bento-stat-label {
+  color: rgb(100, 116, 139);
+  font-weight: 500;
+}
+
+.dark .about-bento-stat-label {
+  color: rgb(148, 163, 184);
+}
+
+.about-bento-dark-card {
+  background: rgb(15, 23, 42);
+  color: rgb(255, 255, 255);
+  border: none;
+  box-shadow: none;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-bento-dark-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 12px 32px -4px rgba(0, 0, 0, 0.3),
+    0 4px 12px -2px rgba(0, 0, 0, 0.2);
+}
+
+.about-bento-dark-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.about-bento-dark-text {
+  color: rgb(148, 163, 184);
+  font-size: 0.875rem;
+}
+
+.about-bento-progress {
+  width: 100%;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: rgb(30, 41, 59);
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.about-bento-progress-bar {
+  width: 85%;
+  height: 100%;
+  background: linear-gradient(90deg, rgb(34, 197, 94) 0%, rgb(22, 163, 74) 100%);
+  border-radius: 9999px;
+  animation: progress-fill 1.5s ease-out;
+}
+
+@keyframes progress-fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 85%;
+  }
+}
+
