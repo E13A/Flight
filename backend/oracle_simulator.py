@@ -82,8 +82,7 @@ def settle_policy_on_chain(policy, delay_minutes):
             
             completed_status = StatusLookup.objects.filter(code='Completed').first()
             if not completed_status:
-                    statusType='payment'
-                )
+                completed_status = StatusLookup.objects.create(code='Completed', statusType='payment')
             
             Payment.objects.create(
                 booking=policy.booking,
