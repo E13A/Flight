@@ -8,7 +8,8 @@ import django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
 django.setup()
 
-from core.models import User, Flight, StatusLookup, Booking, Ticket, Payment, InsurancePolicy
+from core.models import Flight, StatusLookup, Booking, Ticket, Payment, InsurancePolicy
+from django.contrib.auth.models import User
 from datetime import datetime
 
 print("=" * 60)
