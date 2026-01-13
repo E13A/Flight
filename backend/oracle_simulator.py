@@ -68,10 +68,11 @@ def settle_policy_on_chain(policy, delay_minutes):
             logger.info(f"   Transaction: {tx_hash.hex()}")
             logger.info(f"   Gas used: {receipt['gasUsed']}")
             
-            # Update policy status in database (code field is unique, don't filter by statusType)
-            claimed_status = StatusLookup.objects.filter(code='Claimed').first()
-            if not claimed_status:
-                claimed_status = StatusLookup.objects.create(code='Claimed', statusType='policy')
+            # Update policy status in database
+            claimed_status, _ = StatusLookup.objects.get_or_create(
+                code='Claimed',
+                statusType='policy'
+            )
             
             policy.status = claimed_status
             policy.save()
@@ -80,9 +81,10 @@ def settle_policy_on_chain(policy, delay_minutes):
             from core.models import Payment
             from datetime import datetime
             
-            completed_status = StatusLookup.objects.filter(code='Completed').first()
-            if not completed_status:
-                completed_status = StatusLookup.objects.create(code='Completed', statusType='payment')
+            completed_status, _ = StatusLookup.objects.get_or_create(
+                code='Completed',
+                statusType='payment'
+            )
             
             Payment.objects.create(
                 booking=policy.booking,
@@ -117,16 +119,10 @@ def simulate_flight_delay(flight_id, delay_minutes):
         logger.info(f"✈️  Flight {flight_id}: {flight.origin} → {flight.destination}")
         
         # Update flight status to Delayed
-        delayed_status = StatusLookup.objects.filter(
+        delayed_status, _ = StatusLookup.objects.get_or_create(
             code='Delayed',
             statusType='flight'
-        ).first()
-        
-        if not delayed_status:
-            delayed_status = StatusLookup.objects.create(
-                code='Delayed',
-                statusType='flight'
-            )
+        )
         
         flight.status = delayed_status
         flight.save()
