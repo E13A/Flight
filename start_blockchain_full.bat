@@ -71,6 +71,11 @@ if %ERRORLEVEL% neq 0 (
     pause
     exit /b 1
 )
+
+echo.
+echo [5.5/7] Seeding Database with Demo Data...
+echo ========================================
+call python seed_database.py
 cd ..
 
 echo.
