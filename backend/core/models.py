@@ -3,7 +3,7 @@ from django.db import models
 class StatusLookup(models.Model):
     statusId = models.AutoField(primary_key=True, db_column='statusid')
     statusType = models.CharField(max_length=20, db_column='statustype')
-    code = models.CharField(max_length=30, unique=True)
+    code = models.CharField(max_length=30)
     
     class Meta:
         managed = True  # Changed for local SQLite development
