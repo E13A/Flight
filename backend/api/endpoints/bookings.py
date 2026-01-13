@@ -51,16 +51,18 @@ def create_booking(request: CreateBookingRequest):
         raise HTTPException(status_code=404, detail="Flight not found")
 
     # 2. Get Statuses (Case insensitive fallback)
+    # Note: code field is unique in StatusLookup, so we get whatever 'Completed' exists
     try:
-        confirmed = StatusLookup.objects.filter(code__iexact='Confirmed', statusType='booking').first()
+        confirmed = StatusLookup.objects.filter(code__iexact='Confirmed').first()
         if not confirmed:
              confirmed = StatusLookup.objects.create(code='Confirmed', statusType='booking')
              
-        completed = StatusLookup.objects.filter(code__iexact='Completed', statusType='payment').first()
+        # Use existing 'Completed' status (code is unique, can't have multiple)
+        completed = StatusLookup.objects.filter(code__iexact='Completed').first()
         if not completed:
              completed = StatusLookup.objects.create(code='Completed', statusType='payment')
 
-        active_policy = StatusLookup.objects.filter(code__iexact='Active', statusType='policy').first()
+        active_policy = StatusLookup.objects.filter(code__iexact='Active').first()
         if not active_policy:
              active_policy = StatusLookup.objects.create(code='Active', statusType='policy')
 
