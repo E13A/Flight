@@ -5,13 +5,10 @@ from datetime import datetime
 from core.models import Booking, Flight, AppUser, StatusLookup, Ticket, Payment, InsurancePolicy
 from loguru import logger
 import os
-
 router = APIRouter()
-
 # Check if blockchain is enabled
 BLOCKCHAIN_ENABLED = os.environ.get('BLOCKCHAIN_ENABLED', 'False') == 'True'
 print(f"⚙️ STARTUP: BLOCKCHAIN_ENABLED env={os.environ.get('BLOCKCHAIN_ENABLED')}, result={BLOCKCHAIN_ENABLED}")  # DEBUG
-
 # Insurance plan configurations - percentage-based coverage
 INSURANCE_PLANS = {
     "basic": {
@@ -30,13 +27,11 @@ INSURANCE_PLANS = {
         "threshold": 60  # 1 hour
     },
 }
-
 class CreateBookingRequest(BaseModel):
     user_id: int
     flight_id: int
     with_insurance: bool
     insurance_plan_id: Optional[str] = None  # "basic", "standard", "premium"
-
 @router.post("/")
 def create_booking(request: CreateBookingRequest):
     print(f"🎫 BOOKING REQUEST: user={request.user_id}, flight={request.flight_id}, insurance={request.with_insurance}, plan={request.insurance_plan_id}")  # DEBUG
@@ -49,25 +44,23 @@ def create_booking(request: CreateBookingRequest):
         raise HTTPException(status_code=404, detail="User not found")
     except Flight.DoesNotExist:
         raise HTTPException(status_code=404, detail="Flight not found")
-
     # 2. Get Statuses (Case insensitive fallback)
+    # Note: code field is unique in StatusLookup, so we get whatever 'Completed' exists
     try:
-        confirmed = StatusLookup.objects.filter(code__iexact='Confirmed', statusType='booking').first()
+        confirmed = StatusLookup.objects.filter(code__iexact='Confirmed').first()
         if not confirmed:
              confirmed = StatusLookup.objects.create(code='Confirmed', statusType='booking')
              
-        completed = StatusLookup.objects.filter(code__iexact='Completed', statusType='payment').first()
+        # Use existing 'Completed' status (code is unique, can't have multiple)
+        completed = StatusLookup.objects.filter(code__iexact='Completed').first()
         if not completed:
              completed = StatusLookup.objects.create(code='Completed', statusType='payment')
-
-        active_policy = StatusLookup.objects.filter(code__iexact='Active', statusType='policy').first()
+        active_policy = StatusLookup.objects.filter(code__iexact='Active').first()
         if not active_policy:
              active_policy = StatusLookup.objects.create(code='Active', statusType='policy')
-
     except Exception as e:
         # Fallback for dev if seed didn't run or different naming
         raise HTTPException(status_code=500, detail=f"System configuration error: {e}")
-
     # 3. Get insurance plan details if insurance is requested
     insurance_premium = 0
     insurance_coverage = 0
@@ -88,7 +81,6 @@ def create_booking(request: CreateBookingRequest):
             ticket_price = 250.00
             insurance_coverage = ticket_price * 0.60  # 60% of ticket
             delay_threshold = 120
-
     # 4. Create Booking
     booking = Booking.objects.create(
         user=user,
@@ -96,7 +88,6 @@ def create_booking(request: CreateBookingRequest):
         bookingDate=datetime.now(),
         status=confirmed
     )
-
     # 5. Create Ticket
     ticket = Ticket.objects.create(
         booking=booking,
@@ -106,7 +97,6 @@ def create_booking(request: CreateBookingRequest):
         issueDate=datetime.now(),
         isPremium=False
     )
-
     # 6. Create Payment
     total_amount = 250.00 # Base Fare
     if request.with_insurance:
@@ -119,7 +109,6 @@ def create_booking(request: CreateBookingRequest):
         paymentDate=datetime.now(),
         status=completed
     )
-
     # 7. Create Insurance (if requested)
     policy_id = None
     blockchain_tx_hash = None
@@ -213,7 +202,6 @@ def create_booking(request: CreateBookingRequest):
                 print(f"❌ EXCEPTION: {type(e).__name__}: {e}")  # DEBUG
                 logger.error(f"❌ Blockchain integration failed: {e}")
                 logger.warning(f"   Policy {policy_id} saved to database only (graceful fallback)")
-
     return {
         "status": "success",
         "booking_id": booking.bookingId,
