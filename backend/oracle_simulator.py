@@ -25,7 +25,7 @@ from loguru import logger
 import argparse
 from datetime import datetime
 
-def settle_policy_on_chain(policy, delay_minutes):
+def settle_policy_on_chain(policy, delay_minutes, show_consensus=False):
     """
     Settle an insurance policy on the blockchain.
     
@@ -51,7 +51,10 @@ def settle_policy_on_chain(policy, delay_minutes):
             logger.error(f"❌ Policy {policy.policyId} has no blockchain policy ID - was not created on blockchain!")
             return False
         
-        logger.info(f"🔍 Settling blockchain policy {blockchain_policy_id} (DB policy {policy.policyId}) with {delay_minutes} minutes delay...")
+        if show_consensus:
+            logger.info(f"[PoW Layer] Settling blockchain policy {blockchain_policy_id} (DB policy {policy.policyId}) with {delay_minutes} minutes delay...")
+        else:
+            logger.info(f"🔍 Settling blockchain policy {blockchain_policy_id} (DB policy {policy.policyId}) with {delay_minutes} minutes delay...")
         
         # Call settlePolicy on smart contract
         tx_hash = contract.functions.settlePolicy(
@@ -64,7 +67,10 @@ def settle_policy_on_chain(policy, delay_minutes):
         
         # Check if successful
         if receipt['status'] == 1:
-            logger.info(f"✅ Policy settled successfully!")
+            if show_consensus:
+                logger.info(f"[PoW Layer] Policy settled successfully!")
+            else:
+                logger.info(f"✅ Policy settled successfully!")
             logger.info(f"   Transaction: {tx_hash.hex()}")
             logger.info(f"   Gas used: {receipt['gasUsed']}")
             
@@ -94,8 +100,12 @@ def settle_policy_on_chain(policy, delay_minutes):
                 status=completed_status
             )
             
-            logger.info(f"✅ Database updated: Policy {policy.policyId} marked as Claimed")
-            logger.info(f"💰 Payout transaction recorded: ${policy.coverageAmount}")
+            if show_consensus:
+                logger.info(f"[PoS Layer] Database updated: Policy {policy.policyId} marked as Claimed")
+                logger.info(f"[PoS Layer] Payout transaction recorded: ${policy.coverageAmount}")
+            else:
+                logger.info(f"✅ Database updated: Policy {policy.policyId} marked as Claimed")
+                logger.info(f"💰 Payout transaction recorded: ${policy.coverageAmount}")
             return True
         else:
             logger.error("❌ Transaction failed")
@@ -106,7 +116,7 @@ def settle_policy_on_chain(policy, delay_minutes):
         return False
 
 
-def simulate_flight_delay(flight_id, delay_minutes):
+def simulate_flight_delay(flight_id, delay_minutes, show_consensus=False):
     """
     Simulate a flight delay and settle all associated insurance policies.
     
@@ -152,7 +162,7 @@ def simulate_flight_delay(flight_id, delay_minutes):
                 logger.info(f"  ✅ Delay ({delay_minutes}m) >= Threshold ({threshold}m)")
                 logger.info(f"  💰 Triggering payout of ${policy.coverageAmount}...")
                 
-                if settle_policy_on_chain(policy, delay_minutes):
+                if settle_policy_on_chain(policy, delay_minutes, show_consensus):
                     settled_count += 1
                     logger.info(f"  ✅ PAYOUT SUCCESSFUL!")
                 else:
@@ -202,6 +212,7 @@ def main():
     parser.add_argument('--flight-id', type=int, help='Flight ID to delay')
     parser.add_argument('--delay', type=int, help='Delay in minutes')
     parser.add_argument('--auto', action='store_true', help='Auto-monitor all flights')
+    parser.add_argument('--show-consensus', action='store_true', help='Show PoW/PoS consensus labels in output')
     
     args = parser.parse_args()
     
@@ -211,7 +222,7 @@ def main():
     if args.auto:
         auto_monitor()
     elif args.flight_id and args.delay:
-        simulate_flight_delay(args.flight_id, args.delay)
+        simulate_flight_delay(args.flight_id, args.delay, args.show_consensus)
     else:
         logger.error("❌ Please specify --flight-id and --delay, or use --auto")
         logger.info("\nExamples:")
